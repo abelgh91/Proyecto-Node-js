@@ -75,14 +75,11 @@ const register =async (req, res, next) => {
         };     
               } catch (error) {
                 req.file && deleteImgCloudinary(catchImg);
-        return res.status(404).json({
-          error: 'error catch save',
-          message: error.message,
-        });
+        return res.status(404).json(error.message);
               }
           }else{
             req.file && deleteImgCloudinary(catchImg) //si el usuario ya existe tenemos que borrar la img q haya puesto porque el registro no se hace efectivo
-            return res.status(404).json("Este usuario ya existe")
+            return res.status(409).json("Este usuario ya existe")
           }
     } catch (error) {
         req.file && deleteImgCloudinary(catchImg);
