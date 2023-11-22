@@ -434,8 +434,8 @@ const checkNewUser = async (req, res, next) => {
         await User.findByIdAndDelete(userExists._id);
         // borramos su imagen
         deleteImgCloudinary(userExists.image);
-        // lanzamos un 404 con el usuario que antes existia, el check en false y un test de si se ha borrado correctamente o no
-        return res.status(404).json({
+        // lanzamos un 200 con el usuario que antes existia, el check en false y un test de si se ha borrado correctamente o no
+        return res.status(200).json({
           userExists,
           check: false,
           delete: (await User.findById(userExists._id))
