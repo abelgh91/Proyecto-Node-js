@@ -445,7 +445,7 @@ const checkNewUser = async (req, res, next) => {
       }
     }
   } catch (error) {
-    return next(setError(500, error.message || 'Error general to checkCode'));
+    return next(error.message);
   }
 };
 
