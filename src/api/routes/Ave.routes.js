@@ -20,7 +20,7 @@ AveRoutes.get('/vista/getmorevista', getMasVistas);
 AveRoutes.patch('/toggleaveparque/:id', toggleAveParque);
 
 //-------------AUTENTICADOS
-AveRoutes.patch('/update/:id', [isAuth], upload.single('image'), update);
-AveRoutes.delete('/deleteave/:id', [isAuth], deleteAve); 
+AveRoutes.patch('/update/', [isAuth], upload.single('image'), update);
+AveRoutes.delete('/deleteave/', [isAuth], deleteAve); 
 
 module.exports = AveRoutes;

@@ -37,7 +37,7 @@ ParqueRoutes.get('/massuperficie/superficie', getMasSuperficie);
 ParqueRoutes.get('/parqueconlikes/likes', getParqueConLikes);
 
 //-------------CON AUTENTICACION-----------
-ParqueRoutes.patch('/update/:id', [isAuth], upload.single('image'), update);
-ParqueRoutes.delete('/deleteparque/:id', [isAuth], deleteParque);
+ParqueRoutes.patch('/update/', [isAuth], upload.single('image'), update);
+ParqueRoutes.delete('/deleteparque/', [isAuth], deleteParque);
 
 module.exports = ParqueRoutes;
