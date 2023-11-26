@@ -21,6 +21,6 @@ AveRoutes.patch('/toggleaveparque/:id', toggleAveParque);
 
 //-------------AUTENTICADOS
 AveRoutes.patch('/update/', [isAuth], upload.single('image'), update);
-AveRoutes.delete('/deleteave/', [isAuth], deleteAve); 
+AveRoutes.delete('/deleteave/:id', [isAuth], deleteAve); 
 
 module.exports = AveRoutes;
